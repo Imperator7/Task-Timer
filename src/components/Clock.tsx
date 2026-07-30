@@ -1,22 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useClock } from '../hooks/useClock'
 
-const Timer = () => {
-  const [time, setTime] = useState(new Date())
+const Clock = () => {
+  const clock = useClock()
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setTime(new Date())
-    }, 1000)
-
-    return () => clearInterval(intervalId)
-  }, [])
-
-  const timeString = time.toLocaleTimeString()
-
+  const time = clock.time.toLocaleTimeString()
   return (
     <div>
-      <div>{timeString}</div>
+      <div>{time}</div>
     </div>
   )
 }
-export default Timer
+export default Clock
