@@ -3,7 +3,7 @@ import { useClock } from '../hooks/useClock'
 const Clock = () => {
   const clock = useClock()
 
-  const time = clock.time.toLocaleTimeString()
+  const time = clock.time.toLocaleString()
   return (
     <div>
       <div>{time}</div>
