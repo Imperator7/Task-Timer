@@ -45,13 +45,19 @@ const SleepTimer = () => {
           }}
         />
       </div>
-      <div className="flex gap-2 items-baseline">
-        <div className="flex gap-1 text-xl text-blue-800">
-          <p>{hoursTillSleepTime} hrs</p>
-          <p>{minutesTillSleepTime} mins</p>
+      {hoursTillSleepTime !== 0 && minutesTillSleepTime !== 0 ? (
+        <div className="flex gap-2 items-baseline">
+          <div className="flex gap-1 text-xl text-blue-800">
+            <p>{hoursTillSleepTime} hrs</p>
+            <p>{minutesTillSleepTime} mins</p>
+          </div>
+          <h3>left till sleep</h3>
         </div>
-        <h3>left till sleep</h3>
-      </div>
+      ) : (
+        <div>
+          <p>It's already the sleeping time</p>
+        </div>
+      )}
     </div>
   )
 }
